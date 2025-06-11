@@ -22,7 +22,7 @@ jobs:
         zip -r hypebuyandsell-plugin.zip hypebuyandsell
 
     - name: Upload ZIP artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: hypebuyandsell-plugin
         path: build/hypebuyandsell-plugin.zip
