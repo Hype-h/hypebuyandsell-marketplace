@@ -1,0 +1,25 @@
+
+name: Build Plugin Zip
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Zip Plugin
+        run: |
+          zip -r hypebuyandsell-marketplace.zip . -x '*.git*'
+
+      - name: Upload Zip to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: hypebuyandsell-marketplace.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

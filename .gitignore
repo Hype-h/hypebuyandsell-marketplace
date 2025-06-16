@@ -1,0 +1,40 @@
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.swp
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore build tools or zip packages
+*.zip
+
+# Ignore WordPress-specific folders if they exist in your local
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/backups/
+/wp-content/upgrade/
+/node_modules/
+/vendor/
+
+# Composer files (if not needed)
+composer.lock
+
+# npm and package files
+package-lock.json
+yarn.lock
+
+# PHPStorm metadata
+*.iml
+
+# Ignore translations build (optional if compiled separately)
+*.mo
+*.pot
+*.po
