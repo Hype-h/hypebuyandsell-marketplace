@@ -1,0 +1,26 @@
+
+name: Build Plugin ZIP
+
+on:
+  push:
+    branches:
+      - main
+      - release/**
+
+jobs:
+  zip-plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create ZIP from plugin folder
+        run: |
+          mkdir -p build
+          zip -r build/hypebuyandsell-plugin.zip * -x '*.git*' '*.github*' 'build/*'
+
+      - name: Upload Plugin ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: hypebuyandsell-plugin
+          path: build/hypebuyandsell-plugin.zip
